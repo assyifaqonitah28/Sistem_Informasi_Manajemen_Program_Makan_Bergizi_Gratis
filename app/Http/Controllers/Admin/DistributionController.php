@@ -8,6 +8,7 @@ use App\Models\Program;
 use App\Models\Beneficiary;
 use App\Http\Requests\Admin\StoreDistributionRequest;
 use Illuminate\Http\Request;
+use App\Http\Requests\Admin\UpdateDistributionRequest;
 
 class DistributionController extends Controller
 {

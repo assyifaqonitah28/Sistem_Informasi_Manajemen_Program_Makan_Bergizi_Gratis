@@ -113,6 +113,11 @@
                     <i class="fas fa-chart-line mr-3 w-5 text-center"></i> Dashboard
                 </a>
 
+                <a href="{{ route('admin.users.index') }}"
+                    class="flex items-center px-4 py-3 text-gray-700 rounded-lg hover:bg-blue-50 hover:text-blue-700 transition {{ request()->routeIs('admin.users.*') ? 'bg-blue-50 text-blue-700 font-semibold' : '' }}">
+                    <i class="fas fa-user-cog mr-3 w-5 text-center"></i> Pengguna
+                </a>
+
                 <a href="{{ route('admin.programs.index') }}"
                    class="flex items-center px-4 py-3 text-gray-700 rounded-lg hover:bg-blue-50 hover:text-blue-700 transition {{ request()->routeIs('admin.programs.*') ? 'bg-blue-50 text-blue-700 font-semibold' : '' }}">
                     <i class="fas fa-clipboard-list mr-3 w-5 text-center"></i> Program
@@ -133,9 +138,9 @@
                     <i class="fas fa-truck mr-3 w-5 text-center"></i> Distribusi
                 </a>
 
-                <a href="{{ route('admin.users.index') }}"
-                    class="flex items-center px-4 py-3 text-gray-700 rounded-lg hover:bg-blue-50 hover:text-blue-700 transition {{ request()->routeIs('admin.users.*') ? 'bg-blue-50 text-blue-700 font-semibold' : '' }}">
-                    <i class="fas fa-user-cog mr-3 w-5 text-center"></i> Pengguna
+                <a href="{{ route('admin.reports.index') }}"
+                    class="flex items-center px-4 py-3 text-gray-700 rounded-lg hover:bg-blue-50 hover:text-blue-700 transition {{ request()->routeIs('admin.reports.*') ? 'bg-blue-50 text-blue-700 font-semibold' : '' }}">
+                    <i class="fas fa-file mr-3 w-5 text-center"></i> Laporan
                 </a>
             </nav>
 

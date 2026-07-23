@@ -44,6 +44,8 @@ Route::middleware(['auth', 'verified', 'status'])->group(function () {
         Route::resource('beneficiaries', \App\Http\Controllers\Admin\BeneficiaryController::class);
 
         Route::resource('distributions', \App\Http\Controllers\Admin\DistributionController::class);
+
+        Route::resource('reports', \App\Http\Controllers\Admin\ReportController::class);
     });
 
     // ============================================
