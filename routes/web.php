@@ -48,9 +48,7 @@ Route::middleware(['auth', 'verified', 'status'])->group(function () {
     // USER ROUTES
     // ============================================
     Route::middleware('role:user')->prefix('user')->name('user.')->group(function () {
-        Route::get('/dashboard', function () {
-            return view('user.dashboard');
-        })->name('dashboard');
+        Route::get('/dashboard', [\App\Http\Controllers\User\UserDashboardController::class, 'index'])->name('dashboard');
     });
 });
 
