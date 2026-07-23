@@ -55,6 +55,7 @@ Route::middleware(['auth', 'verified', 'status'])->group(function () {
         Route::get('/dashboard', [\App\Http\Controllers\User\UserDashboardController::class, 'index'])->name('dashboard');
 
             Route::get('/programs', [\App\Http\Controllers\User\AvailableProgramController::class, 'index'])->name('programs.index');
+            Route::get('/history', [\App\Http\Controllers\User\HistoryController::class, 'index'])->name('history.index');
     });
 
 });
