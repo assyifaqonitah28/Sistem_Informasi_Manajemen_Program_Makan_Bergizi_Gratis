@@ -62,14 +62,35 @@
     </div>
 
     <!-- Info Card -->
-    <div class="bg-white rounded-xl shadow-sm p-6">
-        <h3 class="text-lg font-semibold text-gray-800 mb-4">
-            <i class="fas fa-celebrate text-yellow-500 mr-2"></i> Fondasi Sistem Selesai!
-        </h3>
-        <p class="text-gray-600">
-            Authentication, RBAC, dan template CRUD sudah siap.
-            Anggota tim dapat mulai mengerjakan modul mereka masing-masing.
-        </p>
+
+    <div class="bg-white rounded-xl shadow-sm p-6 mt-6">
+        <h3 class="text-lg font-semibold text-gray-800 mb-4"><i class="fas fa-chart-bar mr-2 text-blue-600"></i> Statistik Distribusi 6 Bulan Terakhir</h3>
+        <canvas id="distributionChart" height="100"></canvas>
     </div>
 </div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    const ctx = document.getElementById('distributionChart').getContext('2d');
+    new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: @json($chartLabels),
+            datasets: [{
+                label: 'Distribusi Makanan',
+                data: @json($chartData),
+                backgroundColor: 'rgba(59, 130, 246, 0.5)',
+                borderColor: 'rgba(59, 130, 246, 1)',
+                borderWidth: 1,
+                borderRadius: 5
+            }]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                y: { beginAtZero: true, ticks: { stepSize: 1 } }
+            }
+        }
+    });
+</script>
 @endsection

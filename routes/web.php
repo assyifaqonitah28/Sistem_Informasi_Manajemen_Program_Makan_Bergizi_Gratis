@@ -32,11 +32,11 @@ Route::middleware(['auth', 'verified', 'status'])->group(function () {
     // ADMIN ROUTES
     // ============================================
     Route::middleware('role:admin')->prefix('admin')->name('admin.')->group(function () {
-        Route::get('/dashboard', function () {
-            return view('admin.dashboard');
-        })->name('dashboard');
+        Route::get('/dashboard', [\App\Http\Controllers\Admin\AdminDashboardController::class, 'index'])->name('dashboard');
 
         Route::resource('programs', ProgramController::class);
+
+        Route::resource('users', \App\Http\Controllers\Admin\UserController::class);
     });
 
     // ============================================
