@@ -15,11 +15,14 @@ class AdminDashboardController extends Controller
     public function index()
     {
         $stats = [
-            'users' => User::count(),
-            'programs' => Program::count(),
-            'beneficiaries' => Beneficiary::count(),
-            'distributions' => Distribution::count(),
-            'reports' => Report::count(),
+            'total_users' => User::count(),
+            'total_programs' => Program::count(),
+            'active_programs' => Program::where('status', 'active')->count(),
+            'total_beneficiaries' => Beneficiary::count(),
+            'total_distributions' => Distribution::count(),
+            'total_reports' => Report::count(),
+            'my_reports' => Report::count(),
+            'pending_reports' => Report::where('status', 'pending')->count(),
         ];
 
         $monthlyDistributions = Distribution::select(
@@ -46,6 +49,23 @@ class AdminDashboardController extends Controller
             ->take(5)
             ->get();
 
-        return view('admin.dashboard', compact('stats', 'chartLabels', 'chartData', 'recentActivities'));
+        $activePrograms = Program::where('status', 'active')
+            ->latest()
+            ->take(3)
+            ->get();
+
+        $recentDistributions = Distribution::with(['program', 'beneficiary'])
+            ->latest()
+            ->take(5)
+            ->get();
+
+        return view('admin.dashboard', compact(
+            'stats',
+            'chartLabels',
+            'chartData',
+            'recentActivities',
+            'activePrograms',
+            'recentDistributions'
+        ));
     }
 }
