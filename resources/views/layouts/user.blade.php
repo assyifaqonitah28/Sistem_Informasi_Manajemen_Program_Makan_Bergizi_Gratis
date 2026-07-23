@@ -74,9 +74,9 @@
                     <i class="fas fa-chart-line mr-3 w-5"></i> Dashboard
                 </a>
 
-                <a href="#" class="flex items-center px-4 py-3 text-gray-400 rounded-lg cursor-not-allowed opacity-60">
-                    <i class="fas fa-clipboard-list mr-3 w-5"></i> Program Tersedia
-                    <span class="ml-auto text-xs bg-gray-200 text-gray-600 px-2 py-1 rounded">Segera</span>
+                <a href="{{ route('user.programs.index') }}"
+                class="flex items-center px-4 py-3 text-gray-700 rounded-lg hover:bg-green-50 hover:text-green-700 transition {{ request()->routeIs('user.programs.*') ? 'bg-green-50 text-green-700 font-semibold' : '' }}">
+                    <i class="fas fa-clipboard-list mr-3 w-5 text-center"></i> Program Tersedia
                 </a>
 
                 <a href="#" class="flex items-center px-4 py-3 text-gray-400 rounded-lg cursor-not-allowed opacity-60">

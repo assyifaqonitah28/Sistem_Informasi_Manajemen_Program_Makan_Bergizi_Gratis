@@ -53,7 +53,10 @@ Route::middleware(['auth', 'verified', 'status'])->group(function () {
     // ============================================
     Route::middleware('role:user')->prefix('user')->name('user.')->group(function () {
         Route::get('/dashboard', [\App\Http\Controllers\User\UserDashboardController::class, 'index'])->name('dashboard');
+
+            Route::get('/programs', [\App\Http\Controllers\User\AvailableProgramController::class, 'index'])->name('programs.index');
     });
+
 });
 
 require __DIR__.'/auth.php';
