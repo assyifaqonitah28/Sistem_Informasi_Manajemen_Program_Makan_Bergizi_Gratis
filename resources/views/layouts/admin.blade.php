@@ -118,9 +118,9 @@
                     <i class="fas fa-clipboard-list mr-3 w-5 text-center"></i> Program
                 </a>
 
-                <a href="#" class="flex items-center px-4 py-3 text-gray-400 rounded-lg cursor-not-allowed opacity-60">
+                <a href="{{ route('admin.beneficiaries.index') }}"
+                    class="flex items-center px-4 py-3 text-gray-700 rounded-lg hover:bg-blue-50 hover:text-blue-700 transition {{ request()->routeIs('admin.beneficiaries.*') ? 'bg-blue-50 text-blue-700 font-semibold' : '' }}">
                     <i class="fas fa-users mr-3 w-5 text-center"></i> Penerima Manfaat
-                    <span class="ml-auto text-xs bg-gray-200 text-gray-600 px-2 py-1 rounded">Segera</span>
                 </a>
 
                 <a href="{{ route('admin.regions.index') }}"

@@ -40,6 +40,8 @@ Route::middleware(['auth', 'verified', 'status'])->group(function () {
 
         Route::resource('regions', \App\Http\Controllers\Admin\RegionController::class);
         Route::get('/regions/children', [\App\Http\Controllers\Admin\RegionController::class, 'getChildren'])->name('regions.children');
+
+        Route::resource('beneficiaries', \App\Http\Controllers\Admin\BeneficiaryController::class);
     });
 
     // ============================================
