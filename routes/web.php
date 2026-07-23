@@ -56,6 +56,9 @@ Route::middleware(['auth', 'verified', 'status'])->group(function () {
 
             Route::get('/programs', [\App\Http\Controllers\User\AvailableProgramController::class, 'index'])->name('programs.index');
             Route::get('/history', [\App\Http\Controllers\User\HistoryController::class, 'index'])->name('history.index');
+            Route::get('/my-reports', [\App\Http\Controllers\User\MyReportController::class, 'index'])->name('reports.index');
+            Route::get('/my-reports/create', [\App\Http\Controllers\User\MyReportController::class, 'create'])->name('reports.create');
+            Route::post('/my-reports', [\App\Http\Controllers\User\MyReportController::class, 'store'])->name('reports.store');
     });
 
 });
