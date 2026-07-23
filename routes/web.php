@@ -42,6 +42,8 @@ Route::middleware(['auth', 'verified', 'status'])->group(function () {
         Route::get('/regions/children', [\App\Http\Controllers\Admin\RegionController::class, 'getChildren'])->name('regions.children');
 
         Route::resource('beneficiaries', \App\Http\Controllers\Admin\BeneficiaryController::class);
+
+        Route::resource('distributions', \App\Http\Controllers\Admin\DistributionController::class);
     });
 
     // ============================================
