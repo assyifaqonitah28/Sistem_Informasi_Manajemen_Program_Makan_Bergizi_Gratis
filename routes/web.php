@@ -37,6 +37,9 @@ Route::middleware(['auth', 'verified', 'status'])->group(function () {
         Route::resource('programs', ProgramController::class);
 
         Route::resource('users', \App\Http\Controllers\Admin\UserController::class);
+
+        Route::resource('regions', \App\Http\Controllers\Admin\RegionController::class);
+        Route::get('/regions/children', [\App\Http\Controllers\Admin\RegionController::class, 'getChildren'])->name('regions.children');
     });
 
     // ============================================
