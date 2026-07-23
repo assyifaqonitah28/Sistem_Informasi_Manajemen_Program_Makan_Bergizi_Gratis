@@ -8,8 +8,8 @@ use Illuminate\Support\Facades\Route;
 // PUBLIC ROUTES
 // ============================================
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('landing');
+})->name('landing');
 
 // ============================================
 // AUTHENTICATED ROUTES (Semua user yang login)
