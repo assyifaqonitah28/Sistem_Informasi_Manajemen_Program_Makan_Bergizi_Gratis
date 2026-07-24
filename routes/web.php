@@ -11,6 +11,10 @@ Route::get('/', function () {
     return view('landing');
 })->name('landing');
 
+// Auth Google
+Route::get('/auth/google', [App\Http\Controllers\Auth\GoogleController::class, 'redirectToGoogle'])->name('google.login');
+Route::get('/auth/google/callback', [App\Http\Controllers\Auth\GoogleController::class, 'handleGoogleCallback']);
+
 // ============================================
 // AUTHENTICATED ROUTES (Semua user yang login)
 // ============================================

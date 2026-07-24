@@ -90,24 +90,25 @@
                 </a>
             </nav>
 
-            <div class="absolute bottom-0 left-0 right-0 p-4 border-t border-gray-200 bg-white">
-                <div class="flex items-center justify-between">
-                    <div class="flex items-center">
-                        <div class="w-8 h-8 rounded-full bg-green-600 text-white flex items-center justify-center font-semibold mr-3">
-                            {{ strtoupper(substr(auth()->user()->name, 0, 1)) }}
-                        </div>
-                        <div class="flex-1 min-w-0">
-                            <p class="text-sm font-medium text-gray-800 truncate">{{ auth()->user()->name }}</p>
-                            <p class="text-xs text-gray-500 truncate">{{ auth()->user()->email }}</p>
-                        </div>
+            <div class="absolute bottom-0 left-0 right-0 p-4 border-t border-gray-200 bg-white space-y-3">
+
+                <a href="{{ route('profile.edit') }}" class="flex items-center p-2 rounded-lg hover:bg-gray-100 transition group" title="Kelola Profil">
+                    <div class="w-8 h-8 rounded-full bg-green-600 text-white flex items-center justify-center font-semibold mr-3 flex-shrink-0">
+                        {{ strtoupper(substr(auth()->user()->name, 0, 1)) }}
                     </div>
-                    <form method="POST" action="{{ route('logout') }}">
-                        @csrf
-                        <button type="submit" class="text-xs text-red-600 hover:text-red-800 font-medium ml-2">
-                            <i class="fas fa-sign-out-alt"></i>
-                        </button>
-                    </form>
-                </div>
+                    <div class="flex-1 min-w-0">
+                        <p class="text-sm font-medium text-gray-800 truncate group-hover:text-green-700">{{ auth()->user()->name }}</p>
+                        <p class="text-xs text-gray-500 truncate">Kelola Profil & Password</p>
+                    </div>
+                    <i class="fas fa-chevron-right text-gray-400 text-xs ml-2"></i>
+                </a>
+
+                <form method="POST" action="{{ route('logout') }}">
+                    @csrf
+                    <button type="submit" class="w-full flex items-center justify-center px-4 py-2 text-sm text-red-600 bg-red-50 hover:bg-red-100 rounded-lg font-medium transition">
+                        <i class="fas fa-sign-out-alt mr-2"></i> Keluar
+                    </button>
+                </form>
             </div>
         </aside>
 

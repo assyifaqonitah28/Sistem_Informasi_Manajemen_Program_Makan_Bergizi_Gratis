@@ -106,6 +106,22 @@
                     <button type="submit" class="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-4 rounded-xl font-bold text-lg shadow-lg hover:shadow-xl hover:scale-[1.02] transition-all duration-300 flex items-center justify-center">
                         <i class="fas fa-sign-in-alt mr-2"></i> Masuk
                     </button>
+
+                    <!-- Divider -->
+                    <div class="relative my-6">
+                        <div class="absolute inset-0 flex items-center">
+                            <div class="w-full border-t border-gray-300"></div>
+                        </div>
+                        <div class="relative flex justify-center text-sm">
+                            <span class="px-4 bg-white text-gray-500">Atau masuk dengan</span>
+                        </div>
+                    </div>
+
+                    <!-- Google Login Button -->
+                    <a href="{{ route('google.login') }}" class="w-full bg-white border-2 border-gray-200 text-gray-700 py-3.5 rounded-xl font-bold text-base shadow-sm hover:bg-gray-50 hover:border-gray-300 transition-all duration-300 flex items-center justify-center group">
+                        <img src="https://www.svgrepo.com/show/475656/google-color.svg" class="w-6 h-6 mr-3 group-hover:scale-110 transition-transform" alt="Google Logo">
+                        Masuk dengan Google
+                    </a>
                 </form>
 
                 <!-- Demo Credentials -->
